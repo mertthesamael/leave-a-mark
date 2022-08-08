@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import  { collection, addDoc, onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "../../config/firebase";
-
+import "./notes.css"
 
 const Notes = () => {
 
@@ -37,21 +37,35 @@ addDoc(collection(db,'notes'), {
 })
 }
     return (
-        <div>
+        <>
             {notes.map(notes=>
-                <div key={notes.id}>
+                <div key={notes.id} className="notes-card">
+                    <div className="note-text">
                 <p>{notes.text}</p> 
-                <p>{notes.author}</p>
+                    </div>
+                    <div className="card-footer">
+                        <div className="note-author">
+                <p>@{notes.author}</p>
+                        </div>
+                    </div>
                 </div>)}
+                <div className="notes-card form">
 
                 <form onSubmit={formHandler}>
-                Text : <input onChange={textHandler} name="text" value={inputText}></input>
-                Author : <input onChange={authorHandler} name="author" value={inputAuthor}></input>
+                    <div>
+
+                Your Mark <textarea onChange={textHandler} className="text-input" required name="text" maxLength="850" minLength="10" value={inputText}></textarea>
+                    </div>
+                    <div>
+
+                Author : <input onChange={authorHandler} className="author-input" required name="author" maxLength="20" value={inputAuthor}></input>
+                    </div>
                 
                 <br/>
-                <button type="submit">Test</button>
+                <button className="submit-btn" type="submit">Leave a mark to the Internet</button>
                 </form>
-        </div>
+                </div>
+        </>
     )
 
 }

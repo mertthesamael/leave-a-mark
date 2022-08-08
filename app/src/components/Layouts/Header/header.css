@@ -1,0 +1,10 @@
+.header{
+    background: #393E46;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.heading{
+    margin-left: 4rem;
+}

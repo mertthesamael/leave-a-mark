@@ -1,0 +1,89 @@
+
+ input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+.notes-card{
+    margin:2rem 5rem 0 2rem;
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    background: rgb(22, 22, 22);
+backdrop-filter: blur(100px);
+    border-radius: 7px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.966);
+}
+.form{
+    display: flex;
+}
+.note-text{
+display: flex;
+max-width:20rem;
+
+}
+.note-author{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-input{
+    resize: none;
+    display:block;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    flex-wrap: wrap;
+    height: 30rem;
+    font-size: large;
+
+}
+
+.author-input{
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: large;
+}
+
+.submit-btn{
+    background: transparent;
+    color: white;
+    padding: 1rem;
+}
+
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 100px none #ffffff;
+  border-radius: 65px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 100px none #ffffff;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
