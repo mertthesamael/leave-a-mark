@@ -30,9 +30,11 @@ const [inputAuthor, setAuthor] = useState("")
 const textHandler = (event) => {setText(event.target.value)}
 const authorHandler = (event) => {setAuthor(event.target.value)}
 const formHandler = (event) =>{event.preventDefault()
+    const dt = new Date()
 addDoc(collection(db,'notes'), {
     text: inputText,
     author: inputAuthor,
+    date: dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear(),
     query:9
 })
 }
@@ -45,7 +47,9 @@ addDoc(collection(db,'notes'), {
                     </div>
                     <div className="card-footer">
                         <div className="note-author">
-                <p>@{notes.author}</p>
+                <p>@{notes.author} {notes.date}</p>
+                
+                
                         </div>
                     </div>
                 </div>)}
